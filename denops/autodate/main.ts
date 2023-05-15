@@ -56,20 +56,28 @@ async function replaceLine(
 ): Promise<void> {
   // deno-lint-ignore require-await
   await batch(denops, async () => {
-    lines.forEach((line, i) => {
-      let newLine = line;
-      i = index + i;
-      config.replace.forEach(async (rep) => {
-        const re = eval(rep[0]) as RegExp;
-        const after = rep[1];
-        // clog({ i, line, re, after });
-        if (re.test(line)) {
-          newLine = newLine.replace(re, eval("`" + after + "`"));
-          clog(`Update ${i}: [${line}] -> [${newLine}]`);
-          await fn.setline(denops, i, newLine);
-        }
+    try {
+      lines.forEach((line, i) => {
+        let newLine = line;
+        i = index + i;
+        config.replace.forEach(async (rep) => {
+          try {
+            const re = eval(rep[0]) as RegExp;
+            const after = rep[1];
+            // clog({ i, line, re, after });
+            if (re.test(line)) {
+              newLine = newLine.replace(re, eval("`" + after + "`"));
+              clog(`Update ${i}: [${line}] -> [${newLine}]`);
+              await fn.setline(denops, i, newLine);
+            }
+          } catch (e) {
+            console.log(e);
+          }
+        });
       });
-    });
+    } catch (e) {
+      console.log(e);
+    }
   });
 }
 
@@ -89,7 +97,7 @@ export async function main(denops: Denops): Promise<void> {
           return;
         }
         // Get filetype and filetype config.
-        const ft = (await op.filetype.get(denops));
+        const ft = await op.filetype.get(denops);
         clog({ ft });
 
         const allConfig = config["*"];
