@@ -1,12 +1,12 @@
-import * as autocmd from "https://deno.land/x/denops_std@v3.3.1/autocmd/mod.ts";
-import * as fn from "https://deno.land/x/denops_std@v3.3.1/function/mod.ts";
-import * as helper from "https://deno.land/x/denops_std@v3.3.1/helper/mod.ts";
-import * as op from "https://deno.land/x/denops_std@v3.3.1/option/mod.ts";
-import * as vars from "https://deno.land/x/denops_std@v3.3.1/variable/mod.ts";
-import type { Denops } from "https://deno.land/x/denops_std@v3.3.1/mod.ts";
-import { assertBoolean } from "https://deno.land/x/unknownutil@v2.0.0/mod.ts";
-import { batch } from "https://deno.land/x/denops_std@v3.3.1/batch/mod.ts";
-import { format } from "https://deno.land/std@0.141.0/datetime/mod.ts";
+import * as autocmd from "https://deno.land/x/denops_std@v5.0.0/autocmd/mod.ts";
+import * as fn from "https://deno.land/x/denops_std@v5.0.0/function/mod.ts";
+import * as helper from "https://deno.land/x/denops_std@v5.0.0/helper/mod.ts";
+import * as op from "https://deno.land/x/denops_std@v5.0.0/option/mod.ts";
+import * as vars from "https://deno.land/x/denops_std@v5.0.0/variable/mod.ts";
+import type { Denops } from "https://deno.land/x/denops_std@v5.0.0/mod.ts";
+import { assertBoolean } from "https://deno.land/x/unknownutil@v2.1.1/mod.ts";
+import { batch } from "https://deno.land/x/denops_std@v5.0.0/batch/mod.ts";
+import { format } from "https://deno.land/std@0.188.0/datetime/mod.ts";
 import { merge } from "https://cdn.skypack.dev/lodash@4.17.21";
 
 type Config = {
