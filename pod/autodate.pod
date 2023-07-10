@@ -1,28 +1,32 @@
-# dps-autodate
+---
+name: dps-autodate
+description: Denops auto date
+---
+
+=pod
+
+=head1 dps-autodate
 
 Denops auto date.
 
 Find specific keywords and set dates automatically.
 
-- before
-```
+=item before
+
   Last Change: .
-```
 
-- after
-```
+=item after
+
   Last Change: 2022/06/09 16:59:43.
-```
 
-# Features 
+=head1 Features X<autodate-features>
 
 dps-autodate is a Vim plugin that automatically set dates.
 
-# Installation 
+=head1 Installation X<autodate-installation>
 
-If you use [folke/lazy.nvim](https://github.com/folke/lazy.nvim).
+If you use L<folke/lazy.nvim|https://github.com/folke/lazy.nvim>.
 
-```
   {
     "yukimemi/dps-autodate",
     lazy = false,
@@ -30,44 +34,42 @@ If you use [folke/lazy.nvim](https://github.com/folke/lazy.nvim).
       "vim-denops/denops.vim",
     },
   }
-```
 
-If you use [yukimemi/dvpm](https://github.com/yukimemi/dvpm).
+If you use L<yukimemi/dvpm|https://github.com/yukimemi/dvpm>.
 
-```
   dvpm.add({ url: "yukimemi/dps-autodate" });
-```
 
-# Requirements 
+=head1 Requirements X<autodate-requirements>
 
-- [Deno - A modern runtime for JavaScript and TypeScript](https://deno.land/)
-- [vim-denops/denops.vim: 🐜 An ecosystem of Vim/Neovim which allows developers to write cross-platform plugins in Deno](https://github.com/vim-denops/denops.vim)
-# Usage 
+=item [Deno - A modern runtime for JavaScript and TypeScript](https://deno.land/)
+
+=item [vim-denops/denops.vim: 🐜 An ecosystem of Vim/Neovim which allows developers to write cross-platform plugins in Deno](https://github.com/vim-denops/denops.vim)
+
+=head1 Usage X<autodate-usage>
 
 No special settings are required.
 By default, `Last Change: .` keyword to `Last Change: yyyy/MM/dd HH:mm:ss.`.
 
-# Commands 
+=head1 Commands X<autodate-commands>
 
-`:DisableAutodate`                                          
+C<:DisableAutodate>                                          X<:DisableAutodate>
 Disable auto date.
 
-`:EnableAutodate`                                            
+C<:EnableAutodate>                                            X<:EnableAutodate>
 Enable auto backup.
 
-# Config 
+=head1 Config X<autodate-config>
 
 No settings are required. However, the following settings can be made if necessary.
 
-`g:autodate_debug`                                          
+C<g:autodate_debug>                                          X<g:autodate_debug>
 Enable debug messages.
 default is v:false
 
-`g:autodate_config`                                        
+C<g:autodate_config>                                        X<g:autodate_config>
 autodate configuration.
 default setting is below.
 
-```
   vim.g.autodate_config = {
     -- filetype. `*` is all filetype.
     ["*"] = {
@@ -87,11 +89,9 @@ default setting is below.
       ["tail"] = 13,
     },
   }
-```
 
-# Example 
+=head1 Example X<autodate-example>
 
-```
   let g:autodate_config = {
     \ "xml": {
     \   "replace": [
@@ -103,31 +103,29 @@ default setting is below.
     \   "tail": 5,
     \ }
     \ }
-```
 
-- before
-```
+=item before
+
   <?xml version="1.0" encoding="utf-8"?>
   <root>
     <func name="Set-Store">
       <set key="VERSION"></set>
     </func>
   </root>
-```
 
-- after save
-```
+=item after save
+
   <?xml version="1.0" encoding="utf-8"?>
   <root>
     <func name="Set-Store">
       <set key="VERSION">20220609_165708</set>
     </func>
   </root>
-```
 
-# License 
+=head1 License X<autodate-license>
 
 Licensed under MIT License.
 
 Copyright (c) 2023 yukimemi
 
+=cut
