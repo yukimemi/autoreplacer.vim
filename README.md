@@ -63,6 +63,10 @@ No settings are required. However, the following settings can be made if necessa
 Enable debug messages.
 default is v:false
 
+`g:autodate_notify`                                        
+Whether to `vim.notify` messages during autodate. (Neovim only)
+default is v:false
+
 `g:autodate_config`                                        
 autodate configuration.
 default setting is below.
@@ -81,9 +85,9 @@ default setting is below.
       ["events"] = { "FileWritePre", "BufWritePre" },
       -- replace file name pattern.
       ["pat"] = "*",
-      -- How many characters from the beginning of the file to rewrite
+      -- How many lines from the beginning of the file to rewrite
       ["head"] = 13,
-      -- How many characters from the end of the file to rewrite
+      -- How many lines from the end of the file to rewrite
       ["tail"] = 13,
     },
   }

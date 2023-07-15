@@ -1,12 +1,18 @@
-import * as autocmd from "https://deno.land/x/denops_std@v5.0.0/autocmd/mod.ts";
-import * as fn from "https://deno.land/x/denops_std@v5.0.0/function/mod.ts";
-import * as helper from "https://deno.land/x/denops_std@v5.0.0/helper/mod.ts";
-import * as op from "https://deno.land/x/denops_std@v5.0.0/option/mod.ts";
-import * as vars from "https://deno.land/x/denops_std@v5.0.0/variable/mod.ts";
-import type { Denops } from "https://deno.land/x/denops_std@v5.0.0/mod.ts";
-import { assertBoolean } from "https://deno.land/x/unknownutil@v2.1.1/mod.ts";
-import { batch } from "https://deno.land/x/denops_std@v5.0.0/batch/mod.ts";
-import { format } from "https://deno.land/std@0.188.0/datetime/mod.ts";
+// =============================================================================
+// File        : main.ts
+// Author      : yukimemi
+// Last Change : 2023/07/15 13:07:23.
+// =============================================================================
+
+import * as autocmd from "https://deno.land/x/denops_std@v5.0.1/autocmd/mod.ts";
+import * as fn from "https://deno.land/x/denops_std@v5.0.1/function/mod.ts";
+import * as helper from "https://deno.land/x/denops_std@v5.0.1/helper/mod.ts";
+import * as op from "https://deno.land/x/denops_std@v5.0.1/option/mod.ts";
+import * as vars from "https://deno.land/x/denops_std@v5.0.1/variable/mod.ts";
+import type { Denops } from "https://deno.land/x/denops_std@v5.0.1/mod.ts";
+import { assert, is } from "https://deno.land/x/unknownutil@v3.2.0/mod.ts";
+import { batch } from "https://deno.land/x/denops_std@v5.0.1/batch/mod.ts";
+import { format } from "https://deno.land/std@0.194.0/datetime/mod.ts";
 import { merge } from "https://cdn.skypack.dev/lodash@4.17.21";
 
 type Config = {
@@ -22,6 +28,7 @@ type Config = {
 let now = new Date();
 let nowStr = now.toString();
 let debug = false;
+let notify = false;
 
 let config: Config = {
   "*": {
@@ -84,6 +91,7 @@ async function replaceLine(
 export async function main(denops: Denops): Promise<void> {
   // debug.
   debug = await vars.g.get(denops, "autodate_debug", debug);
+  notify = await vars.g.get(denops, "autodate_notify", notify);
   // Merge user config.
   const userConfig = (await vars.g.get(denops, "autodate_config")) as Config;
   config = merge(config, userConfig);
@@ -125,6 +133,12 @@ export async function main(denops: Denops): Promise<void> {
           await replaceLine(denops, c, head, 1);
           await replaceLine(denops, c, tail, lastline - c.tail);
         }
+        if (notify && denops.meta.host === "nvim") {
+          await helper.execute(
+            denops,
+            `lua vim.notify([[autodate: ${nowStr}]], vim.log.levels.INFO)`,
+          );
+        }
       } catch (e) {
         clog(e);
       }
@@ -132,7 +146,7 @@ export async function main(denops: Denops): Promise<void> {
 
     // deno-lint-ignore require-await
     async change(e: unknown): Promise<void> {
-      assertBoolean(e);
+      assert(e, is.Boolean);
       console.log(`Autodate: ${e}`);
       enable = e;
     },

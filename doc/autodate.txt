@@ -18,13 +18,13 @@ Find specific keywords and set dates automatically.
 
 =============================================================================
 Features ~
-*autodate-features*
+                                                          *autodate-features*
 
 dps-autodate is a Vim plugin that automatically set dates.
 
 =============================================================================
 Installation ~
-*autodate-installation*
+                                                      *autodate-installation*
 
 If you use folke/lazy.nvim |https://github.com/folke/lazy.nvim|.
 
@@ -46,20 +46,20 @@ If you use yukimemi/dvpm |https://github.com/yukimemi/dvpm|.
 
 =============================================================================
 Requirements ~
-*autodate-requirements*
+                                                      *autodate-requirements*
 
 - [Deno - A modern runtime for JavaScript and TypeScript](https://deno.land/)
 - [vim-denops/denops.vim: 🐜 An ecosystem of Vim/Neovim which allows developers to write cross-platform plugins in Deno](https://github.com/vim-denops/denops.vim)
 =============================================================================
 Usage ~
-*autodate-usage*
+                                                             *autodate-usage*
 
 No special settings are required.
 By default, `Last Change: .` keyword to `Last Change: yyyy/MM/dd HH:mm:ss.`.
 
 =============================================================================
 Commands ~
-*autodate-commands*
+                                                          *autodate-commands*
 
 `:DisableAutodate`                                          *:DisableAutodate*
 Disable auto date.
@@ -69,12 +69,16 @@ Enable auto backup.
 
 =============================================================================
 Config ~
-*autodate-config*
+                                                            *autodate-config*
 
 No settings are required. However, the following settings can be made if necessary.
 
 `g:autodate_debug`                                          *g:autodate_debug*
 Enable debug messages.
+default is v:false
+
+`g:autodate_notify`                                        *g:autodate_notify*
+Whether to `vim.notify` messages during autodate. (Neovim only)
 default is v:false
 
 `g:autodate_config`                                        *g:autodate_config*
@@ -95,9 +99,9 @@ default setting is below.
       ["events"] = { "FileWritePre", "BufWritePre" },
       -- replace file name pattern.
       ["pat"] = "*",
-      -- How many characters from the beginning of the file to rewrite
+      -- How many lines from the beginning of the file to rewrite
       ["head"] = 13,
-      -- How many characters from the end of the file to rewrite
+      -- How many lines from the end of the file to rewrite
       ["tail"] = 13,
     },
   }
@@ -105,7 +109,7 @@ default setting is below.
 
 =============================================================================
 Example ~
-*autodate-example*
+                                                           *autodate-example*
 
 >
   let g:autodate_config = {
@@ -143,7 +147,7 @@ Example ~
 
 =============================================================================
 License ~
-*autodate-license*
+                                                           *autodate-license*
 
 Licensed under MIT License.
 
