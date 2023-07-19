@@ -27,6 +27,8 @@ dps-autodate is a Vim plugin that automatically set dates.
 
 If you use L<folke/lazy.nvim|https://github.com/folke/lazy.nvim>.
 
+=begin lua
+
   {
     "yukimemi/dps-autodate",
     lazy = false,
@@ -35,9 +37,15 @@ If you use L<folke/lazy.nvim|https://github.com/folke/lazy.nvim>.
     },
   }
 
+=end lua
+
 If you use L<yukimemi/dvpm|https://github.com/yukimemi/dvpm>.
 
+=begin typescript
+
   dvpm.add({ url: "yukimemi/dps-autodate" });
+
+=end typescript
 
 =head1 Requirements X<autodate-requirements>
 
@@ -74,6 +82,8 @@ C<g:autodate_config>                                        X<g:autodate_config>
 autodate configuration.
 default setting is below.
 
+=begin lua
+
   vim.g.autodate_config = {
     -- filetype. `*` is all filetype.
     ["*"] = {
@@ -94,7 +104,11 @@ default setting is below.
     },
   }
 
+=end lua
+
 =head1 Example X<autodate-example>
+
+=begin vim
 
   let g:autodate_config = {
     \ "xml": {
@@ -108,7 +122,11 @@ default setting is below.
     \ }
     \ }
 
+=end vim
+
 =item before
+
+=begin xml
 
   <?xml version="1.0" encoding="utf-8"?>
   <root>
@@ -117,7 +135,11 @@ default setting is below.
     </func>
   </root>
 
+=end xml
+
 =item after save
+
+=begin xml
 
   <?xml version="1.0" encoding="utf-8"?>
   <root>
@@ -125,6 +147,8 @@ default setting is below.
       <set key="VERSION">20220609_165708</set>
     </func>
   </root>
+
+=end xml
 
 =head1 License X<autodate-license>
 
