@@ -23,23 +23,19 @@ dps-autodate is a Vim plugin that automatically set dates.
 If you use [folke/lazy.nvim](https://github.com/folke/lazy.nvim).
 
 ```lua
-
-  {
-    "yukimemi/dps-autodate",
-    lazy = false,
-    dependencies = {
-      "vim-denops/denops.vim",
-    },
-  }
-
+{
+  "yukimemi/dps-autodate",
+  lazy = false,
+  dependencies = {
+    "vim-denops/denops.vim",
+  },
+}
 ```
 
 If you use [yukimemi/dvpm](https://github.com/yukimemi/dvpm).
 
 ```typescript
-
-  dvpm.add({ url: "yukimemi/dps-autodate" });
-
+dvpm.add({ url: "yukimemi/dps-autodate" });
 ```
 
 # Requirements 
@@ -76,69 +72,61 @@ autodate configuration.
 default setting is below.
 
 ```lua
-
-  vim.g.autodate_config = {
-    -- filetype. `*` is all filetype.
-    ["*"] = {
-      ["replace"] = {
-        -- replace before (regexp pattern) to replace after.
-        -- `now` is current date time.
-        -- `format` is deno function. https://deno.land/std/datetime/format.ts
-        { "/(.*Last Change.*: ).*\.$/i", "$1${format(now, "yyyy/MM/dd HH:mm:ss")}." },
-      },
-      -- replace events.
-      ["events"] = { "FileWritePre", "BufWritePre" },
-      -- replace file name pattern.
-      ["pat"] = "*",
-      -- How many lines from the beginning of the file to rewrite
-      ["head"] = 13,
-      -- How many lines from the end of the file to rewrite
-      ["tail"] = 13,
+vim.g.autodate_config = {
+  -- filetype. `*` is all filetype.
+  ["*"] = {
+    ["replace"] = {
+      -- replace before (regexp pattern) to replace after.
+      -- `now` is current date time.
+      -- `format` is deno function. https://deno.land/std/datetime/format.ts
+      { "/(.*Last Change.*: ).*\.$/i", "$1${format(now, "yyyy/MM/dd HH:mm:ss")}." },
     },
-  }
-
+    -- replace events.
+    ["events"] = { "FileWritePre", "BufWritePre" },
+    -- replace file name pattern.
+    ["pat"] = "*",
+    -- How many lines from the beginning of the file to rewrite
+    ["head"] = 13,
+    -- How many lines from the end of the file to rewrite
+    ["tail"] = 13,
+  },
+}
 ```
 
 # Example 
 
 ```vim
-
-  let g:autodate_config = {
-    \ "xml": {
-    \   "replace": [
-    \     ['/^(.*key="version">)[^<]*(<.*)/i', '$1${format(now, "yyyyMMdd_HHmmss")}$2']
-    \   ],
-    \   "event": ["BufWritePre"],
-    \   "pat": ["*.xml", "*.xaml"],
-    \   "head": 30,
-    \   "tail": 5,
-    \ }
-    \ }
-
+let g:autodate_config = {
+  \ "xml": {
+  \   "replace": [
+  \     ['/^(.*key="version">)[^<]*(<.*)/i', '$1${format(now, "yyyyMMdd_HHmmss")}$2']
+  \   ],
+  \   "event": ["BufWritePre"],
+  \   "pat": ["*.xml", "*.xaml"],
+  \   "head": 30,
+  \   "tail": 5,
+  \ }
+  \ }
 ```
 
 - before
 ```xml
-
-  <?xml version="1.0" encoding="utf-8"?>
-  <root>
-    <func name="Set-Store">
-      <set key="VERSION"></set>
-    </func>
-  </root>
-
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <func name="Set-Store">
+    <set key="VERSION"></set>
+  </func>
+</root>
 ```
 
 - after save
 ```xml
-
-  <?xml version="1.0" encoding="utf-8"?>
-  <root>
-    <func name="Set-Store">
-      <set key="VERSION">20220609_165708</set>
-    </func>
-  </root>
-
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <func name="Set-Store">
+    <set key="VERSION">20220609_165708</set>
+  </func>
+</root>
 ```
 
 # License 
