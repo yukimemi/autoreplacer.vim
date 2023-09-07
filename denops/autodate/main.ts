@@ -1,7 +1,7 @@
 // =============================================================================
 // File        : main.ts
 // Author      : yukimemi
-// Last Change : 2023/07/15 13:07:23.
+// Last Change : 2023/09/08 08:10:20.
 // =============================================================================
 
 import * as autocmd from "https://deno.land/x/denops_std@v5.0.1/autocmd/mod.ts";
@@ -38,7 +38,7 @@ let config: Config = {
         '$1${format(now, "yyyy/MM/dd HH:mm:ss")}.',
       ],
     ],
-    event: ["FileWritePre", "BufWritePre"],
+    event: ["BufWritePre"],
     pat: "*",
     head: 13,
     tail: 13,

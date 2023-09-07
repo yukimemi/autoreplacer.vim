@@ -82,7 +82,7 @@ vim.g.autodate_config = {
       { "/(.*Last Change.*: ).*\.$/i", "$1${format(now, "yyyy/MM/dd HH:mm:ss")}." },
     },
     -- replace events.
-    ["events"] = { "FileWritePre", "BufWritePre" },
+    ["events"] = { "BufWritePre" },
     -- replace file name pattern.
     ["pat"] = "*",
     -- How many lines from the beginning of the file to rewrite
