@@ -1,7 +1,7 @@
 // =============================================================================
 // File        : main.ts
 // Author      : yukimemi
-// Last Change : 2023/09/08 08:10:20.
+// Last Change : 2023/09/17 17:52:54.
 // =============================================================================
 
 import * as autocmd from "https://deno.land/x/denops_std@v5.0.1/autocmd/mod.ts";
@@ -78,12 +78,12 @@ async function replaceLine(
               await fn.setline(denops, i, newLine);
             }
           } catch (e) {
-            console.log(e);
+            helper.echoerr(denops, e);
           }
         });
       });
     } catch (e) {
-      console.log(e);
+      helper.echoerr(denops, e);
     }
   });
 }
@@ -147,7 +147,7 @@ export async function main(denops: Denops): Promise<void> {
     // deno-lint-ignore require-await
     async change(e: unknown): Promise<void> {
       assert(e, is.Boolean);
-      console.log(`Autodate: ${e}`);
+      helper.echo(denops, `Autodate: ${e}`);
       enable = e;
     },
   };
