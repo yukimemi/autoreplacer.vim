@@ -12,7 +12,7 @@ import * as vars from "https://deno.land/x/denops_std@v5.0.1/variable/mod.ts";
 import type { Denops } from "https://deno.land/x/denops_std@v5.0.1/mod.ts";
 import { assert, is } from "https://deno.land/x/unknownutil@v3.10.0/mod.ts";
 import { batch } from "https://deno.land/x/denops_std@v5.0.1/batch/mod.ts";
-import { format } from "https://deno.land/std@0.204.0/datetime/mod.ts";
+import { format } from "https://deno.land/std@0.205.0/datetime/mod.ts";
 import { merge } from "https://cdn.skypack.dev/lodash@4.17.21";
 
 type Config = {
