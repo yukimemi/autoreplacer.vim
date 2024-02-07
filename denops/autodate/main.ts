@@ -10,7 +10,7 @@ import * as helper from "https://deno.land/x/denops_std@v6.0.1/helper/mod.ts";
 import * as op from "https://deno.land/x/denops_std@v6.0.1/option/mod.ts";
 import * as vars from "https://deno.land/x/denops_std@v6.0.1/variable/mod.ts";
 import type { Denops } from "https://deno.land/x/denops_std@v6.0.1/mod.ts";
-import { assert, is } from "https://deno.land/x/unknownutil@v3.14.1/mod.ts";
+import { assert, is } from "https://deno.land/x/unknownutil@v3.15.0/mod.ts";
 import { batch } from "https://deno.land/x/denops_std@v6.0.1/batch/mod.ts";
 import { format } from "https://deno.land/std@0.214.0/datetime/mod.ts";
 import { merge } from "https://cdn.skypack.dev/lodash@4.17.21";
