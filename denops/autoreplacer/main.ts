@@ -1,7 +1,7 @@
 // =============================================================================
 // File        : main.ts
 // Author      : yukimemi
-// Last Change : 2023/09/17 17:52:54.
+// Last Change : 2024/04/15 22:35:23.
 // =============================================================================
 
 import * as autocmd from "https://deno.land/x/denops_std@v6.4.0/autocmd/mod.ts";
@@ -90,18 +90,18 @@ async function replaceLine(
 
 export async function main(denops: Denops): Promise<void> {
   // debug.
-  debug = await vars.g.get(denops, "autodate_debug", debug);
-  notify = await vars.g.get(denops, "autodate_notify", notify);
+  debug = await vars.g.get(denops, "autoreplacer_debug", debug);
+  notify = await vars.g.get(denops, "autoreplacer_notify", notify);
   // Merge user config.
-  const userConfig = (await vars.g.get(denops, "autodate_config")) as Config;
+  const userConfig = (await vars.g.get(denops, "autoreplacer_config")) as Config;
   config = merge(config, userConfig);
   clog({ debug, config });
 
   denops.dispatcher = {
-    async autodate(): Promise<void> {
+    async autoreplace(): Promise<void> {
       try {
         if (!enable) {
-          clog(`autodate skip ! enable: [${enable}]`);
+          clog(`autoreplacer skip ! enable: [${enable}]`);
           return;
         }
         // Get filetype and filetype config.
@@ -136,7 +136,7 @@ export async function main(denops: Denops): Promise<void> {
         if (notify && denops.meta.host === "nvim") {
           await helper.execute(
             denops,
-            `lua vim.notify([[autodate: ${nowStr}]], vim.log.levels.INFO)`,
+            `lua vim.notify([[autoreplacer: ${nowStr}]], vim.log.levels.INFO)`,
           );
         }
       } catch (e) {
@@ -147,7 +147,7 @@ export async function main(denops: Denops): Promise<void> {
     // deno-lint-ignore require-await
     async change(e: unknown): Promise<void> {
       assert(e, is.Boolean);
-      helper.echo(denops, `Autodate: ${e}`);
+      helper.echo(denops, `autoreplacer: ${e}`);
       enable = e;
     },
   };
@@ -162,8 +162,8 @@ export async function main(denops: Denops): Promise<void> {
       call denops#plugin#wait('${denops.name}')
       call denops#request('${denops.name}', a:method, a:params)
     endfunction
-    command! EnableAutodate call s:${denops.name}_notify('change', [v:true])
-    command! DisableAutodate call s:${denops.name}_notify('change', [v:false])
+    command! EnableAutoReplacer call s:${denops.name}_notify('change', [v:true])
+    command! DisableAutoReplacer call s:${denops.name}_notify('change', [v:false])
   `,
   );
 
@@ -174,10 +174,10 @@ export async function main(denops: Denops): Promise<void> {
       helper.define(
         c.event,
         c.pat,
-        `call s:${denops.name}_request('autodate', [])`,
+        `call s:${denops.name}_request('autoreplace', [])`,
       );
     });
   });
 
-  clog("dps-autodate has loaded");
+  clog("autoreplacer has loaded");
 }

@@ -1,30 +1,32 @@
-# dps-autodate
+# autoreplacer
 
-Denops auto date.
+Auto Replacer.
 
-Find specific keywords and set dates automatically.
+Find specific keywords and replace it automatically.
 
 - before
+
 ```
   Last Change: .
 ```
 
 - after
+
 ```
   Last Change: 2022/06/09 16:59:43.
 ```
 
-# Features 
+# Features
 
-dps-autodate is a Vim plugin that automatically set dates.
+autoreplacer is a Vim plugin that automatically replace words.
 
-# Installation 
+# Installation
 
 If you use [folke/lazy.nvim](https://github.com/folke/lazy.nvim).
 
 ```lua
 {
-  "yukimemi/dps-autodate",
+  "yukimemi/autoreplacer.vim",
   lazy = false,
   dependencies = {
     "vim-denops/denops.vim",
@@ -35,44 +37,48 @@ If you use [folke/lazy.nvim](https://github.com/folke/lazy.nvim).
 If you use [yukimemi/dvpm](https://github.com/yukimemi/dvpm).
 
 ```typescript
-dvpm.add({ url: "yukimemi/dps-autodate" });
+dvpm.add({ url: "yukimemi/autoreplacer.vim" });
 ```
 
-# Requirements 
+# Requirements
 
 - [Deno - A modern runtime for JavaScript and TypeScript](https://deno.land/)
 - [vim-denops/denops.vim: 🐜 An ecosystem of Vim/Neovim which allows developers to write cross-platform plugins in Deno](https://github.com/vim-denops/denops.vim)
-# Usage 
+
+# Usage
 
 No special settings are required.
 By default, `Last Change: .` keyword to `Last Change: yyyy/MM/dd HH:mm:ss.`.
 
-# Commands 
+# Commands
 
-`:DisableAutodate`                                          
-Disable auto date.
+`:DisableAutoReplacer`
 
-`:EnableAutodate`                                            
-Enable auto backup.
+Disable auto replacer.
 
-# Config 
+`:EnableAutoReplacer`
+
+Enable auto replacer.
+
+# Config
 
 No settings are required. However, the following settings can be made if necessary.
 
-`g:autodate_debug`                                          
+`g:autoreplacer_debug`
 Enable debug messages.
 default is v:false
 
-`g:autodate_notify`                                        
-Whether to `vim.notify` messages during autodate. (Neovim only)
+`g:autoreplacer_notify`
+
+Whether to `vim.notify` messages during autoreplacer. (Neovim only)
 default is v:false
 
-`g:autodate_config`                                        
-autodate configuration.
+`g:autoreplacer_config`
+autoreplacer configuration.
 default setting is below.
 
 ```lua
-vim.g.autodate_config = {
+vim.g.autoreplacer_config = {
   -- filetype. `*` is all filetype.
   ["*"] = {
     ["replace"] = {
@@ -93,10 +99,10 @@ vim.g.autodate_config = {
 }
 ```
 
-# Example 
+# Example
 
 ```vim
-let g:autodate_config = {
+let g:autoreplacer_config = {
   \ "xml": {
   \   "replace": [
   \     ['/^(.*key="version">)[^<]*(<.*)/i', '$1${format(now, "yyyyMMdd_HHmmss")}$2']
@@ -110,6 +116,7 @@ let g:autodate_config = {
 ```
 
 - before
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <root>
@@ -120,6 +127,7 @@ let g:autodate_config = {
 ```
 
 - after save
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <root>
@@ -129,9 +137,8 @@ let g:autodate_config = {
 </root>
 ```
 
-# License 
+# License
 
 Licensed under MIT License.
 
-Copyright (c) 2023 yukimemi
-
+Copyright (c) 2024 yukimemi
