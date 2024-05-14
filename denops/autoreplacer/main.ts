@@ -4,14 +4,14 @@
 // Last Change : 2024/04/15 22:35:23.
 // =============================================================================
 
-import * as autocmd from "https://deno.land/x/denops_std@v6.4.2/autocmd/mod.ts";
-import * as fn from "https://deno.land/x/denops_std@v6.4.2/function/mod.ts";
-import * as helper from "https://deno.land/x/denops_std@v6.4.2/helper/mod.ts";
-import * as op from "https://deno.land/x/denops_std@v6.4.2/option/mod.ts";
-import * as vars from "https://deno.land/x/denops_std@v6.4.2/variable/mod.ts";
-import type { Denops } from "https://deno.land/x/denops_std@v6.4.2/mod.ts";
-import { assert, is } from "https://deno.land/x/unknownutil@v3.18.0/mod.ts";
-import { batch } from "https://deno.land/x/denops_std@v6.4.2/batch/mod.ts";
+import * as autocmd from "https://deno.land/x/denops_std@v6.4.3/autocmd/mod.ts";
+import * as fn from "https://deno.land/x/denops_std@v6.4.3/function/mod.ts";
+import * as helper from "https://deno.land/x/denops_std@v6.4.3/helper/mod.ts";
+import * as op from "https://deno.land/x/denops_std@v6.4.3/option/mod.ts";
+import * as vars from "https://deno.land/x/denops_std@v6.4.3/variable/mod.ts";
+import type { Denops } from "https://deno.land/x/denops_std@v6.4.3/mod.ts";
+import { assert, is } from "https://deno.land/x/unknownutil@v3.18.1/mod.ts";
+import { batch } from "https://deno.land/x/denops_std@v6.4.3/batch/mod.ts";
 import { format } from "https://deno.land/std@0.224.0/datetime/mod.ts";
 import { merge } from "https://cdn.skypack.dev/lodash@4.17.21";
 
