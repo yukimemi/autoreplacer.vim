@@ -11,7 +11,7 @@ import * as op from "https://deno.land/x/denops_std@v6.5.1/option/mod.ts";
 import * as vars from "https://deno.land/x/denops_std@v6.5.1/variable/mod.ts";
 import type { Denops } from "https://deno.land/x/denops_std@v6.5.1/mod.ts";
 import { batch } from "https://deno.land/x/denops_std@v6.5.1/batch/mod.ts";
-import { format } from "jsr:@std/datetime@0.224.0";
+import { format } from "jsr:@std/datetime@0.224.3";
 import { merge } from "https://cdn.skypack.dev/lodash@4.17.21";
 import { z } from "https://deno.land/x/zod@v3.23.8/mod.ts";
 
