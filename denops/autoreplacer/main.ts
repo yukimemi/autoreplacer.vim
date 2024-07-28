@@ -1,19 +1,19 @@
 // =============================================================================
 // File        : main.ts
 // Author      : yukimemi
-// Last Change : 2024/05/25 22:05:56.
+// Last Change : 2024/07/28 17:40:01.
 // =============================================================================
 
-import * as autocmd from "https://deno.land/x/denops_std@v6.5.1/autocmd/mod.ts";
-import * as fn from "https://deno.land/x/denops_std@v6.5.1/function/mod.ts";
-import * as helper from "https://deno.land/x/denops_std@v6.5.1/helper/mod.ts";
-import * as op from "https://deno.land/x/denops_std@v6.5.1/option/mod.ts";
-import * as vars from "https://deno.land/x/denops_std@v6.5.1/variable/mod.ts";
-import type { Denops } from "https://deno.land/x/denops_std@v6.5.1/mod.ts";
-import { batch } from "https://deno.land/x/denops_std@v6.5.1/batch/mod.ts";
-import { format } from "jsr:@std/datetime@0.224.3";
+import * as autocmd from "jsr:@denops/std@7.0.0/autocmd";
+import * as fn from "jsr:@denops/std@7.0.0/function";
+import * as helper from "jsr:@denops/std@7.0.0/helper";
+import * as op from "jsr:@denops/std@7.0.0/option";
+import * as vars from "jsr:@denops/std@7.0.0/variable";
+import type { Denops } from "jsr:@denops/std@7.0.0";
+import { batch } from "jsr:@denops/std@7.0.0/batch";
+import { format } from "jsr:@std/datetime@0.224.0";
 import { merge } from "https://cdn.skypack.dev/lodash@4.17.21";
-import { z } from "https://deno.land/x/zod@v3.23.8/mod.ts";
+import { z } from "npm:zod@3.23.8";
 
 type Config = {
   [key: string]: {
