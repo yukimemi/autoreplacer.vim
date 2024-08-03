@@ -4,13 +4,13 @@
 // Last Change : 2024/07/28 17:40:01.
 // =============================================================================
 
-import * as autocmd from "jsr:@denops/std@7.0.0/autocmd";
-import * as fn from "jsr:@denops/std@7.0.0/function";
-import * as helper from "jsr:@denops/std@7.0.0/helper";
-import * as op from "jsr:@denops/std@7.0.0/option";
-import * as vars from "jsr:@denops/std@7.0.0/variable";
-import type { Denops } from "jsr:@denops/std@7.0.0";
-import { batch } from "jsr:@denops/std@7.0.0/batch";
+import * as autocmd from "jsr:@denops/std@7.0.3/autocmd";
+import * as fn from "jsr:@denops/std@7.0.3/function";
+import * as helper from "jsr:@denops/std@7.0.3/helper";
+import * as op from "jsr:@denops/std@7.0.3/option";
+import * as vars from "jsr:@denops/std@7.0.3/variable";
+import type { Denops } from "jsr:@denops/std@7.0.3";
+import { batch } from "jsr:@denops/std@7.0.3/batch";
 import { format } from "jsr:@std/datetime@0.224.3";
 import { merge } from "https://cdn.skypack.dev/lodash@4.17.21";
 import { z } from "npm:zod@3.23.8";
