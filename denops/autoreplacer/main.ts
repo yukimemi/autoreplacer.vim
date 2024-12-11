@@ -13,7 +13,7 @@ import type { Denops } from "jsr:@denops/std@7.4.0";
 import { batch } from "jsr:@denops/std@7.4.0/batch";
 import { format } from "jsr:@std/datetime@0.225.2";
 import { merge } from "https://cdn.skypack.dev/lodash@4.17.21";
-import { z } from "npm:zod@3.23.8";
+import { z } from "npm:zod@3.24.1";
 
 type Config = {
   [key: string]: {
