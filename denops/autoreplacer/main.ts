@@ -1,7 +1,7 @@
 // =============================================================================
 // File        : main.ts
 // Author      : yukimemi
-// Last Change : 2024/12/31 10:32:04.
+// Last Change : 2025/04/27 07:54:28.
 // =============================================================================
 
 import * as autocmd from "jsr:@denops/std@7.5.0/autocmd";
@@ -12,7 +12,7 @@ import * as vars from "jsr:@denops/std@7.5.0/variable";
 import type { Denops } from "jsr:@denops/std@7.5.0";
 import { batch } from "jsr:@denops/std@7.5.0/batch";
 import { format } from "jsr:@std/datetime@0.225.4";
-import { merge } from "jsr:@es-toolkit/es-toolkit@1.36.0";
+import { merge } from "jsr:@es-toolkit/es-toolkit@1.35.0";
 import { z } from "npm:zod@3.24.3";
 
 type Config = {
