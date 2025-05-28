@@ -11,7 +11,7 @@ import * as op from "jsr:@denops/std@7.5.0/option";
 import * as vars from "jsr:@denops/std@7.5.0/variable";
 import type { Denops } from "jsr:@denops/std@7.5.0";
 import { batch } from "jsr:@denops/std@7.5.0/batch";
-import { format } from "jsr:@std/datetime@0.225.4";
+import { format } from "jsr:@std/datetime@0.225.5";
 import { merge } from "jsr:@es-toolkit/es-toolkit@1.38.0";
 import { z } from "npm:zod@3.25.30";
 
