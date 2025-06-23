@@ -4,13 +4,13 @@
 // Last Change : 2025/04/27 07:54:28.
 // =============================================================================
 
-import * as autocmd from "jsr:@denops/std@7.5.1/autocmd";
-import * as fn from "jsr:@denops/std@7.5.1/function";
-import * as helper from "jsr:@denops/std@7.5.1/helper";
-import * as op from "jsr:@denops/std@7.5.1/option";
-import * as vars from "jsr:@denops/std@7.5.1/variable";
-import type { Denops } from "jsr:@denops/std@7.5.1";
-import { batch } from "jsr:@denops/std@7.5.1/batch";
+import * as autocmd from "jsr:@denops/std@7.6.0/autocmd";
+import * as fn from "jsr:@denops/std@7.6.0/function";
+import * as helper from "jsr:@denops/std@7.6.0/helper";
+import * as op from "jsr:@denops/std@7.6.0/option";
+import * as vars from "jsr:@denops/std@7.6.0/variable";
+import type { Denops } from "jsr:@denops/std@7.6.0";
+import { batch } from "jsr:@denops/std@7.6.0/batch";
 import { format } from "jsr:@std/datetime@0.225.5";
 import { merge } from "jsr:@es-toolkit/es-toolkit@1.39.3";
 import { z } from "npm:zod@3.25.67";
