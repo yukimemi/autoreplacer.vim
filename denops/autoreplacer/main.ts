@@ -12,7 +12,7 @@ import * as vars from "jsr:@denops/std@7.6.0/variable";
 import type { Denops } from "jsr:@denops/std@7.6.0";
 import { batch } from "jsr:@denops/std@7.6.0/batch";
 import { format } from "jsr:@std/datetime@0.225.5";
-import { merge } from "jsr:@es-toolkit/es-toolkit@1.39.3";
+import { merge } from "jsr:@es-toolkit/es-toolkit@1.39.4";
 import { z } from "npm:zod@3.25.67";
 
 type Config = {
