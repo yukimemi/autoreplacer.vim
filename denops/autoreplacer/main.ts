@@ -4,16 +4,16 @@
 // Last Change : 2025/04/27 07:54:28.
 // =============================================================================
 
-import * as autocmd from "jsr:@denops/std@7.6.0/autocmd";
-import * as fn from "jsr:@denops/std@7.6.0/function";
-import * as helper from "jsr:@denops/std@7.6.0/helper";
-import * as op from "jsr:@denops/std@7.6.0/option";
-import * as vars from "jsr:@denops/std@7.6.0/variable";
-import type { Denops } from "jsr:@denops/std@7.6.0";
-import { batch } from "jsr:@denops/std@7.6.0/batch";
+import * as autocmd from "jsr:@denops/std@8.0.0/autocmd";
+import * as fn from "jsr:@denops/std@8.0.0/function";
+import * as helper from "jsr:@denops/std@8.0.0/helper";
+import * as op from "jsr:@denops/std@8.0.0/option";
+import * as vars from "jsr:@denops/std@8.0.0/variable";
+import type { Denops } from "jsr:@denops/std@8.0.0";
+import { batch } from "jsr:@denops/std@8.0.0/batch";
 import { format } from "jsr:@std/datetime@0.225.5";
 import { merge } from "jsr:@es-toolkit/es-toolkit@1.39.10";
-import { z } from "npm:zod@4.1.0";
+import { z } from "npm:zod@4.1.1";
 
 type Config = {
   [key: string]: {
