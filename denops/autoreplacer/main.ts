@@ -1,19 +1,19 @@
 // =============================================================================
 // File        : main.ts
 // Author      : yukimemi
-// Last Change : 2025/04/27 07:54:28.
+// Last Change : 2025/11/02 09:32:26.
 // =============================================================================
 
-import * as autocmd from "jsr:@denops/std@8.1.1/autocmd";
-import * as fn from "jsr:@denops/std@8.1.1/function";
-import * as helper from "jsr:@denops/std@8.1.1/helper";
-import * as op from "jsr:@denops/std@8.1.1/option";
-import * as vars from "jsr:@denops/std@8.1.1/variable";
-import type { Denops } from "jsr:@denops/std@8.1.1";
-import { batch } from "jsr:@denops/std@8.1.1/batch";
-import { format } from "jsr:@std/datetime@0.225.5";
-import { merge } from "jsr:@es-toolkit/es-toolkit@1.41.0";
-import { z } from "npm:zod@4.1.12";
+import * as autocmd from "@denops/std/autocmd";
+import * as fn from "@denops/std/function";
+import * as helper from "@denops/std/helper";
+import * as op from "@denops/std/option";
+import * as vars from "@denops/std/variable";
+import type { Denops } from "@denops/std";
+import { batch } from "@denops/std/batch";
+import { format } from "@std/datetime";
+import { merge } from "@es-toolkit/es-toolkit";
+import { z } from "zod";
 
 type Config = {
   [key: string]: {
